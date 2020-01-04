@@ -4,6 +4,10 @@ var router = express.Router();
 const people = require('../people.json');
 const path = require('path');
 
+router.get('/', (req,res) => {
+    res.send('Ciao');
+});
+
 router.get('/poeti', (req,res) => {
     res.sendFile(path.join(__dirname, '../people.json'));
 });
