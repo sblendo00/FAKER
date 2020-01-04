@@ -1,0 +1,14 @@
+extends layout
+block content
+  header
+    h1 #{title}
+  hr
+  br
+  article
+     img(src=`${poeta.image}`, width= 300, height= 300)
+     h2 Email: #{poeta.email}
+     h2 Telefono: #{poeta.phone}
+     h2 Nazione: #{poeta.address}
+     h2 Sito: #{poeta.site}
+     h2 Poesia: 
+     h2 #{poeta.text}
