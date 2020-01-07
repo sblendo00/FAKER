@@ -9,13 +9,15 @@ router.get('/', function(req, res, next) {
 
 function createFakePerson()
 {
+    //creare un oggetto con dentro tutto il json
     let ogg = {persone:[]};
 
 
 for(let i = 0; i<10; i++)
 {
- let randomNumber = faker.random.number();
- let randomName = faker.name.findName(); 
+
+ let randomNumber = faker.random.number();//nome libreria. nome metodo. nome dentro il metodo
+ let NomeCasuale = faker.name.findName(); 
  let randomEmail = faker.internet.email();
  let randomPhone = faker.phone.phoneNumber();
  let randomImage = faker.image.people();
@@ -23,6 +25,8 @@ for(let i = 0; i<10; i++)
  let randomSite = faker.internet.url();
  let randomText = faker.lorem.text();
 
+
+ // dentro l'oggetto person creo l'abbinamento tra variabile vuota: valore libreria
  let person = {
    number:randomNumber,
    name:randomName,
@@ -33,7 +37,7 @@ for(let i = 0; i<10; i++)
    site:randomSite,
    text:randomText,
  }
-
+ // pusho ogni volta person dentro il vettore persone dentro l'oggetto ogg
  ogg.persone.push(person);
 }
  let data = JSON.stringify(ogg);
